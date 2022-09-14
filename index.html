@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Generate a <span>random password<span></h1>
+            <h2>Never use an insecure password again.</h2>
+            <button id="generator">Generate passwords</button>
+            <div>
+                <label for="passLength">Password length:</label>
+                <input id="passLength" type="number" value="15">
+            </div>
+            <label>
+                <input type="checkbox" value="letter" checked>
+                Letters
+            </label>
+            <label>
+                <input type="checkbox" value="number" checked>
+                Numbers
+            </label>
+            <label>
+                <input type="checkbox" value="symbol" checked>
+                Symbols
+            </label>
+            <hr>
+            <span id="pass1" class="pass"></span>
+            <span id="pass2" class="pass"></span>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
