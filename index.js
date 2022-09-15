@@ -6,7 +6,14 @@ const symbols = characters.join('').replace(/([\w]+)/,'').split('');
 
 const pass1El = document.getElementById('pass1');
 const pass2El = document.getElementById('pass2');
-    
+
+pass1El.addEventListener('click', () => {
+    copyText(pass1El);
+});
+pass2El.addEventListener('click', () => {
+    copyText(pass2El);
+});
+
       
 document.getElementById('generator').onclick = () => {
     const chLet = document.querySelector('[value="letter"]');
@@ -35,11 +42,17 @@ function genPass(chLetAdd, chNumAdd, chSymbAdd, passLength) {
             pass2 += getSymb(charArr);
         }
     }
-    pass1El.textContent = pass1;
-    pass2El.textContent = pass2;
+    pass1El.value = pass1;
+    pass2El.value = pass2;
     
 }
 
 function getSymb(characters) {
     return characters[Math.floor(Math.random() * characters.length)];
+}
+
+function copyText(elt) {
+    elt.select();
+    document.execCommand('copy');
+    elt.blur();
 }
